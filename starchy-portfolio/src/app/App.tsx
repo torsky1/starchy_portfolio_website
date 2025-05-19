@@ -1,9 +1,11 @@
 import * as Styled from "./App.styled";
 function App() {
   return (
-    <>
-      <Styled.AppHeader>Starchy Portfolio</Styled.AppHeader>
-    </>
+    <Styled.AppContainer>
+      <Styled.ContentContainer>
+        
+      </Styled.ContentContainer>
+    </Styled.AppContainer>
   );
 }
 
