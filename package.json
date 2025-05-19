@@ -1,0 +1,14 @@
+{
+  "name": "starchy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kacper Żarna, Wiktor Twardowski",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "vite": "^6.3.5"
+  }
+}
