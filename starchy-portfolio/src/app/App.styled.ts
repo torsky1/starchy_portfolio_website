@@ -18,5 +18,6 @@ export const ContentContainer = styled.div`
   width: 100%;
   height: 100%;
   max-width: 1080px;
+  padding-top: 50px;
 `;
 //padding-top: 20px;

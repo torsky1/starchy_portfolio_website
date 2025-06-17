@@ -30,4 +30,5 @@ body {
   font-style: normal;
   color: #b1f030;
   background-color: black;
+  cursor: url("/assets/green_cursor_32x32.png") 0 0, auto;
 }
