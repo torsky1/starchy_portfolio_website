@@ -20,4 +20,3 @@ export const ContentContainer = styled.div`
   max-width: 1080px;
   padding-top: 50px;
 `;
-//padding-top: 20px;

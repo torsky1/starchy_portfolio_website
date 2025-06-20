@@ -10,5 +10,6 @@ export default defineConfig({
       "@components": path.resolve(__dirname, "./src/components"),
     },
   },
+  base: "/starchy_portfolio_website/",
   plugins: [react()],
 });
