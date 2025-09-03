@@ -6,6 +6,7 @@ import * as Styled from "./App.styled";
 import HomePage from "../pages/HomePage/HomePage";
 import AboutPage from "../pages/AboutPage/AboutPage";
 import ContactPage from "../pages/ContactPage/ContactPage";
+import PortfolioPage from "../pages/PortfolioPage/PortfolioPage";
 function App() {
   return (
     <Styled.AppContainer>
@@ -13,6 +14,7 @@ function App() {
         <Navigation />
         <Routes>
           <Route index element={<HomePage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
