@@ -11,10 +11,14 @@ const PortfolioPage = () => (
     }}
   >
     <h1>VIDEO PLAYLIST</h1>
-    <div style={{ width: "100%", maxWidth: 720, aspectRatio: "16/9" }}>
+    <div
+      style={{ width: "100%", maxWidth: 720, aspectRatio: "16/9" }}
+      className="yt-wrapper"
+    >
       <iframe
         width="100%"
-        height="400"
+        height="100%"
+        loading="lazy"
         src={YT_PLAYLIST_URL}
         title="YouTube playlist"
         frameBorder="0"

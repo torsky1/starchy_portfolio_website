@@ -9,6 +9,12 @@ export const ContactContainer = styled.div`
   width: 100%;
   padding-top: 100px;
   padding-left: 380px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    padding-top: 40px;
+    padding-left: 0;
+  }
 `;
 
 export const ContactText = styled.p`
@@ -18,9 +24,20 @@ export const ContactText = styled.p`
   margin-top: 20px;
   text-align: left;
   height: 600px;
+
+  @media (max-width: 768px) {
+    height: auto;
+    font-size: 14px;
+    text-align: center;
+  }
 `;
 
 export const TextContainer = styled.div`
   height: 600px;
   max-width: 300px;
+
+  @media (max-width: 768px) {
+    height: auto;
+    max-width: 90vw;
+  }
 `;

@@ -4,10 +4,17 @@ export const AboutContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  min-height: 100vh;
   max-width: 960px;
   padding-top: 100px;
+  padding-bottom: 0;
   gap: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding-top: 40px;
+    gap: 20px;
+  }
 `;
 
 export const AboutImage = styled.img`
@@ -15,6 +22,11 @@ export const AboutImage = styled.img`
   height: auto;
   max-width: 400px;
   margin-top: 20px;
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+    margin-top: 0;
+  }
 `;
 
 export const AboutText = styled.p`
@@ -23,10 +35,21 @@ export const AboutText = styled.p`
   color: white;
   margin-top: 20px;
   text-align: left;
-  height: 600px;
+  height: auto;
+
+  @media (max-width: 768px) {
+    height: auto;
+    font-size: 14px;
+    text-align: center;
+  }
 `;
 
 export const TextContainer = styled.div`
-  height: 600px;
+  height: auto;
   max-width: 300px;
+
+  @media (max-width: 768px) {
+    height: auto;
+    max-width: 90vw;
+  }
 `;

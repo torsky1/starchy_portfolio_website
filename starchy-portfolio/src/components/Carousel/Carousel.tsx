@@ -16,8 +16,21 @@ const Carousel = () => {
       <Styled.PaginationContainer>{dots}</Styled.PaginationContainer>
     ),
     customPaging: (i: number) => {
-      return <Styled.SlideImage width="50px" src={carouselPaths[i]} />;
+      return (
+        <Styled.SlideImage
+          width="50px"
+          src={carouselPaths[i]}
+          loading="lazy"
+          decoding="async"
+        />
+      );
     },
+    responsive: [
+      // tak jak na telefonach: obrazy pod sobą również do 1280px
+      { breakpoint: 1280, settings: "unslick" },
+      { breakpoint: 768, settings: "unslick" },
+      { breakpoint: 480, settings: "unslick" },
+    ],
   };
 
   return (

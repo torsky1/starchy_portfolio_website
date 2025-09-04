@@ -4,8 +4,8 @@ const Contact = () => {
     <Styled.ContactContainer>
       <Styled.TextContainer></Styled.TextContainer>
       <Styled.ContactText>
-        * instagram: @_starchy <br /> * email: starchy@examplemail.com
-        <br /> * phone: +48 123 456 789
+        @_starchy <br /> skrobiszewski.marcin@gmail.com
+        <br />
       </Styled.ContactText>
     </Styled.ContactContainer>
   );

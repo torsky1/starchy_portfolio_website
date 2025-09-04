@@ -30,4 +30,9 @@ export const carouselPaths = [
   "/assets/carousel29.png",
   "/assets/carousel30.png",
   "/assets/carousel31.png",
+  "/assets/carousel32.png",
+  "/assets/carousel33.png",
+  "/assets/carousel34.png",
+  "/assets/carousel35.png",
+  "/assets/carousel36.png",
 ];

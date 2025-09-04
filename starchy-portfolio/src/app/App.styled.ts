@@ -19,5 +19,9 @@ export const ContentContainer = styled.div`
   height: 100%;
   max-width: 1080px;
   padding-top: 50px;
+
+  @media (max-height: 900px) {
+    padding-top: 16px;
+  }
 `;
 //padding-top: 20px;

@@ -23,12 +23,70 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family: "Jacques Francois Shadow", serif;
   font-weight: 400;
   font-style: normal;
   color: #b1f030;
   background-color: black;
   cursor: url("/assets/green_cursor_32x32.png") 0 0, auto;
+}
+
+/* Media queries: mobile/tablet adjustments */
+@media (max-width: 1200px) {
+  body {
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+}
+
+/* Responsive helpers for specific pages */
+@media (max-width: 1024px) {
+  .yt-wrapper {
+    max-width: 640px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+  }
+}
+@media (max-width: 768px) {
+  .yt-wrapper {
+    max-width: 520px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+  }
+}
+@media (max-width: 480px) {
+  .yt-wrapper {
+    max-width: 360px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+  }
+}
+@media (max-width: 1280px) {
+  .yt-wrapper {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+  }
 }
