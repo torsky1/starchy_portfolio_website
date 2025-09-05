@@ -26,7 +26,6 @@ const Carousel = () => {
       );
     },
     responsive: [
-      // tak jak na telefonach: obrazy pod sobą również do 1280px
       { breakpoint: 1280, settings: "unslick" },
       { breakpoint: 768, settings: "unslick" },
       { breakpoint: 480, settings: "unslick" },

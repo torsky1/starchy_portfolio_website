@@ -34,7 +34,6 @@ body {
   cursor: url("/assets/green_cursor_32x32.png") 0 0, auto;
 }
 
-/* Media queries: mobile/tablet adjustments */
 @media (max-width: 1200px) {
   body {
     overflow-x: auto;
@@ -54,7 +53,6 @@ body {
   }
 }
 
-/* Responsive helpers for specific pages */
 @media (max-width: 1024px) {
   .yt-wrapper {
     max-width: 640px;

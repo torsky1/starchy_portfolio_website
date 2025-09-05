@@ -4,9 +4,8 @@ export const AboutContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 20vh;
   max-width: 960px;
-  padding-top: 100px;
   padding-bottom: 0;
   gap: 40px;
 
