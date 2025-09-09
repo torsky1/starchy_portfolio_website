@@ -9,8 +9,7 @@ const PortfolioPage = () => {
   const [videoId, setVideoId] = useState<string | null>(null);
 
   useEffect(() => {
-    // read hash like #VIDEO_ID
-    const hash = location.hash?.replace("#", "");
+  const hash = location.hash?.replace("#", "");
     if (hash) setVideoId(hash);
     else setVideoId(null);
   }, [location.hash]);
@@ -18,7 +17,7 @@ const PortfolioPage = () => {
   const src = videoId
     ? `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=0`
     : YT_PLAYLIST_URL;
-
+    
   return (
     <div
       style={{
@@ -28,9 +27,8 @@ const PortfolioPage = () => {
         alignItems: "center",
       }}
     >
-      <h1>VIDEO PLAYLIST</h1>
       <div
-        style={{ width: "100%", maxWidth: 720, aspectRatio: "16/9" }}
+        style={{ width: "100%", maxWidth: 720, aspectRatio: "16/9", marginTop: 24 }}
         className="yt-wrapper"
       >
         <iframe

@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-export const DropdownWrapper = styled.div`
+export const DropdownWrapper = styled.div<{ $isOpen?: boolean; $suppressHover?: boolean }>`
   display: inline-block;
   padding-top: 0;
-  /* show dropdown when hovering wrapper (label or list) */
-  &:hover > ul {
-    display: block;
+  @media (min-width: 769px) {
+    ${(p) => (p.$suppressHover ? "" : `&:hover > ul { display: block; }`)}
   }
+
+  ${(p) => p.$isOpen && `& > ul { display: block; }`}
 
   @media (min-width: 768px) {
     position: relative;
@@ -15,7 +16,7 @@ export const DropdownWrapper = styled.div`
 
 export const DropdownList = styled.ul`
   position: absolute;
-  /* place directly under the label and slightly overlap to avoid hover gap */
+  
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-4px);

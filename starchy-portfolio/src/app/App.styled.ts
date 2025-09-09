@@ -24,4 +24,3 @@ export const ContentContainer = styled.div`
     padding-top: 16px;
   }
 `;
-//padding-top: 20px;

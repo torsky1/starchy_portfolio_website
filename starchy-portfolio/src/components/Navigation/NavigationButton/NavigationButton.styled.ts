@@ -7,7 +7,8 @@ export const NavButton = styled.button<{
   color: white;
   cursor: pointer;
   font-size: 16px;
-  font-family: inherit;
+  font-family: "Arial", serif;
+  font-weight: 900;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -15,9 +16,11 @@ export const NavButton = styled.button<{
 
   @media (max-width: 768px) {
     font-size: 14px;
+    font-weight: 800;
   }
   @media (max-width: 480px) {
     font-size: 13px;
+    font-weight: 800;
   }
   &:hover {
     color: #b1f030;

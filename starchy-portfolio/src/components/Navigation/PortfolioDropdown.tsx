@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import * as Styled from "./PortfolioDropdown.styled";
 import { PLAYLIST_ID, type Clip, PORTFOLIO_CLIPS } from "./portfolioClips";
 import * as NavBtnStyled from "./NavigationButton/NavigationButton.styled";
@@ -29,10 +29,15 @@ type Props = {
 
 const PortfolioDropdown = ({ label, isActive = false }: Props) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [clips, setClips] = useState<Clip[]>([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [suppressHover, setSuppressHover] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const touchStartRef = useRef(false);
 
   useEffect(() => {
-    // prefer hardcoded list if available, otherwise attempt API fetch
+    
     if (PORTFOLIO_CLIPS.length > 0) {
       setClips(PORTFOLIO_CLIPS);
       return;
@@ -43,20 +48,89 @@ const PortfolioDropdown = ({ label, isActive = false }: Props) => {
       .catch(() => setClips([]));
   }, []);
 
-  const goToClip = (id: string) => navigate(`/portfolio#${id}`);
+  const goToClip = (id: string) => {
+    setIsOpen(false);
+    setSuppressHover(true);
+    navigate(`/portfolio#${id}`);
+  };
+
+  useEffect(() => {
+    function handleDocClick(e: MouseEvent) {
+      const target = e.target as Node | null;
+      if (wrapperRef.current && target && !wrapperRef.current.contains(target)) {
+        setIsOpen(false);
+        setSuppressHover(false);
+      }
+    }
+
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        setSuppressHover(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleDocClick);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handleDocClick);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, []);
 
   return (
-    <Styled.DropdownWrapper>
-      <NavBtnStyled.NavButton $isActive={isActive}>{label}</NavBtnStyled.NavButton>
+    <Styled.DropdownWrapper
+      ref={wrapperRef}
+      $isOpen={isOpen}
+      $suppressHover={suppressHover}
+        onMouseEnter={() => {
+          if (!suppressHover) setIsOpen(true);
+        }}
+        onMouseLeave={() => {
+          if (window.innerWidth >= 769) {
+            setIsOpen(false);
+            setSuppressHover(false);
+          } else {
+            setSuppressHover(false);
+          }
+        }}
+    >
+      <NavBtnStyled.NavButton
+        $isActive={isActive}
+        onTouchStart={() => {
+          touchStartRef.current = true;
+          if (!isOpen) setIsOpen(true);
+        }}
+        onClick={() => {
+          if (touchStartRef.current) {
+            touchStartRef.current = false;
+            return;
+          }
+          setIsOpen((v) => !v);
+        }}
+      >
+        {label}
+      </NavBtnStyled.NavButton>
       <Styled.DropdownList>
         {clips.length > 0 ? (
           clips.map((clip) => (
-            <Styled.DropdownItem key={clip.id} onClick={() => goToClip(clip.id)}>
+            <Styled.DropdownItem
+              key={clip.id}
+              $isActive={location.hash === `#${clip.id}`}
+              onClick={() => goToClip(clip.id)}
+            >
               {clip.title}
             </Styled.DropdownItem>
           ))
         ) : (
-          <Styled.DropdownItem onClick={() => window.open(`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`, "_blank")}>
+          <Styled.DropdownItem
+            $isActive={false}
+            onClick={() => {
+              setIsOpen(false);
+              setSuppressHover(true);
+              window.open(`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`, "_blank");
+            }}
+          >
             Open playlist on YouTube
           </Styled.DropdownItem>
         )}

@@ -8,7 +8,7 @@ export const CarouselContainer = styled.div`
   height: 100%;
   position: relative;
   padding-top: 20px;
-  padding-bottom: 0; /* usuń dodatkowy dół */
+  padding-bottom: 0;
 
   /* cofnięcie zmian dot. niskich ekranów */
 
@@ -28,7 +28,7 @@ export const Slider = styled(SliderComponent)`
   @media (max-width: 1280px) {
     width: 100%;
     height: auto;
-    display: block; /* unslick -> blok */
+    display: block;
   }
 
   /* cofnięcie zmian dot. niskich ekranów */
@@ -61,8 +61,8 @@ export const SlideImage = styled.img<{ width?: string }>`
   max-width: 100%;
 
   @media (max-width: 1280px) {
-    width: calc(100% - 40px); /* 20px lewo i prawo */
-    margin: 0 20px 20px; /* odstęp dolny między zdjęciami */
+  width: calc(100% - 40px);
+  margin: 0 20px 20px;
   }
   @media (max-width: 768px) {
     width: calc(100% - 40px);
@@ -76,8 +76,8 @@ export const SlideImage = styled.img<{ width?: string }>`
 
 export const PaginationContainer = styled.ul`
   margin-top: 100px;
-  margin-bottom: 0; /* usuń dodatkową przestrzeń na dole */
-  padding: 0; /* reset domyślnego paddingu ul */
+  margin-bottom: 0;
+  padding: 0;
   display: flex;
   gap: 10px;
   justify-content: center;
@@ -89,7 +89,7 @@ export const PaginationContainer = styled.ul`
 
   @media (max-width: 1280px) {
     display: none;
-    margin: 0; /* gdy ukryte, nie rezerwuj miejsca */
+    margin: 0;
     padding: 0;
   }
   @media (max-width: 768px) {
