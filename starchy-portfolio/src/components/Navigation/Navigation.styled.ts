@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const NavigationContainer = styled.nav`
   display: flex;
+  align-items: center;
   gap: 80px;
 
   @media (max-width: 768px) {
@@ -17,6 +18,7 @@ export const NavigationContainer = styled.nav`
 `;
 export const NavigationButtonsContainer = styled.div`
   display: flex;
+  align-items: center;
   gap: 30px;
   justify-content: center;
 
