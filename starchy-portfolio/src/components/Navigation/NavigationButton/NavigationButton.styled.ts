@@ -8,6 +8,10 @@ export const NavButton = styled.button<{
   cursor: pointer;
   font-size: 16px;
   font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 
   @media (max-width: 768px) {
     font-size: 14px;
