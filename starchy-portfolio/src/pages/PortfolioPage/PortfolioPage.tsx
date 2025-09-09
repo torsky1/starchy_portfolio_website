@@ -9,8 +9,7 @@ const PortfolioPage = () => {
   const [videoId, setVideoId] = useState<string | null>(null);
 
   useEffect(() => {
-    // read hash like #VIDEO_ID
-    const hash = location.hash?.replace("#", "");
+  const hash = location.hash?.replace("#", "");
     if (hash) setVideoId(hash);
     else setVideoId(null);
   }, [location.hash]);
@@ -28,7 +27,6 @@ const PortfolioPage = () => {
         alignItems: "center",
       }}
     >
-      <h1>VIDEO PLAYLIST</h1>
       <div
         style={{ width: "100%", maxWidth: 720, aspectRatio: "16/9" }}
         className="yt-wrapper"

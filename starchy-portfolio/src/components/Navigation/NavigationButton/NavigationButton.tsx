@@ -20,7 +20,6 @@ const NavigationButton = ({ content, route }: NavigationButtonProps) => {
     }
   };
 
-  // special-case portfolio: show dropdown via CSS :hover; label not clickable
   if (content.toLowerCase() === "portfolio") {
   return <PortfolioDropdown label={content} isActive={isActive} />;
   }

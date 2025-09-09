@@ -1,10 +1,5 @@
-// Playlist ID for your YouTube playlist
 export const PLAYLIST_ID = "PLe7X8qvalB-e7Es98HGHrYJ2sWncux71d";
-
-// Keep a small typed shape export for convenience
 export type Clip = { id: string; title: string };
-
-// Extracted from the playlist feed — hardcoded so dropdown works without an API key.
 export const PORTFOLIO_CLIPS: Clip[] = [
 	{ id: "pU4NJSTM44E", title: "Mercury, Franklin, Kronkel Dom, Kabe, Polskii - BON VOYAGE" },
 	{ id: "1DUNj_CdqC0", title: "SVM!R - RICK RO$$ (Official Video)" },
@@ -21,5 +16,5 @@ export const PORTFOLIO_CLIPS: Clip[] = [
 	{ id: "_N-Y7Lt3HE0", title: "bango balenci - BANGOAT (prod. Json)" },
 	{ id: "AzlRaiXzHoI", title: "zdunekk - boeira (Official Music Video)" },
 	{ id: "slUsQwOTNKk", title: "Alberto - AMIRI (prod. Swizzy)" },
-	// (list trimmed to unique entries)
+ 	
 ];
