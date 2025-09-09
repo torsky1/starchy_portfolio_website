@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const DropdownWrapper = styled.div`
-  position: relative;
   display: inline-block;
   padding-top: 0;
-
   /* show dropdown when hovering wrapper (label or list) */
   &:hover > ul {
     display: block;
+  }
+
+  @media (min-width: 768px) {
+    position: relative;
   }
 `;
 
@@ -40,9 +42,9 @@ export const DropdownList = styled.ul`
   }
 `;
 
-export const DropdownItem = styled.li`
+export const DropdownItem = styled.li<{ $isActive: boolean }>`
   padding: 8px 16px;
-  color: white;
+  color: ${(p) => (p.$isActive ? "#b1f030" : "white")};
   cursor: pointer;
   font-size: 13px;
   /* allow wrapping so full titles are visible */
@@ -56,7 +58,7 @@ export const DropdownItem = styled.li`
   }
 
   @media (max-width: 480px) {
-  font-size: 12px;
+    font-size: 12px;
     padding: 8px 12px;
   }
 `;

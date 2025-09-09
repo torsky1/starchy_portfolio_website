@@ -21,7 +21,7 @@ export const NavigationButtonsContainer = styled.div`
   align-items: center;
   gap: 30px;
   justify-content: center;
-
+  position: relative;
   @media (max-width: 768px) {
     gap: 16px;
   }
