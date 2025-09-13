@@ -37,4 +37,7 @@ export const carouselPaths = [
   `${base}assets/carousel34.png`,
   `${base}assets/carousel35.png`,
   `${base}assets/carousel36.png`,
+  `${base}assets/carousel37.png`,
+  `${base}assets/carousel38.png`,
+  `${base}assets/carousel39.png`
 ];
