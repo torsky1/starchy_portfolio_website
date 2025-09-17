@@ -88,3 +88,26 @@ body {
     width: calc(100% - 40px);
   }
 }
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;          /* czarny ekran */
+  display: grid;
+  place-items: center;       /* logo na środku */
+  opacity: 1;
+  transition: opacity 250ms ease;
+}
+.splash__logo {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+
+@media (max-width: 640px) {
+  .splash {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+             env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  .splash__logo { width: 120px; height: 120px; }
+}

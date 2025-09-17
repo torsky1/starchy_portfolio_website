@@ -40,8 +40,9 @@ const Carousel = () => {
             <Styled.SlideImage 
             src={path} 
             alt={`Carousel slide ${index + 1}`} 
-            fetchpriority="high"
             decoding="async"
+            loading="eager"
+            fetchPriority={index === 0 ? "high" : "auto"}
             />
           </div>
         ))}
