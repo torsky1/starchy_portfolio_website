@@ -1,4 +1,4 @@
-import Starchy from "/assets/wwa_5.jpg";
+import Starchy from "/assets/wwa_5.webp";
 import * as Styled from "./About.styled";
 const About = () => {
   return (

@@ -37,7 +37,12 @@ const Carousel = () => {
       <Styled.Slider {...settings}>
         {carouselPaths.map((path, index) => (
           <div key={index}>
-            <Styled.SlideImage src={path} alt={`Carousel slide ${index + 1}`} />
+            <Styled.SlideImage 
+            src={path} 
+            alt={`Carousel slide ${index + 1}`} 
+            fetchpriority="high"
+            decoding="async"
+            />
           </div>
         ))}
       </Styled.Slider>
