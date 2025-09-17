@@ -27,5 +27,4 @@ export const carouselPaths = [
   `${base}assets/carousel24.webp`,
   `${base}assets/carousel25.webp`,
   `${base}assets/carousel26.webp`,
-  `${base}assets/carousel27.webp`,
 ];
